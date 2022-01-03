@@ -1,4 +1,9 @@
 {
+  "log": {
+    "loglevel": "error",
+    "access": "/var/log/v2ray/access.log",
+    "error": "/var/log/v2ray/error.log"
+  },
   "inbounds": [
     {
       "port": 1080,
@@ -7,8 +12,8 @@
       "settings": {
         "clients": [
           {
-            "id": "xxx",
-            "alterId": 64
+            "id": "b831381d-6324-4d53-ad4f-8cda48b30811",
+            "alterId": 0
           }
         ]
       },
