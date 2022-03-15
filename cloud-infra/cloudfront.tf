@@ -10,7 +10,7 @@ resource "aws_cloudfront_distribution" "vpn" {
   price_class = "PriceClass_200"
 
   origin {
-    domain_name = "baiyuan.freemyip.com"
+    domain_name = "${var.ddns_subdomain}.freemyip.com"
     origin_id   = "fargate"
     custom_origin_config {
       http_port                = 1080

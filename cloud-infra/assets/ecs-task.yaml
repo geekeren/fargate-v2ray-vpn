@@ -1,0 +1,29 @@
+- name: v2ray
+  image: bywang/vpn
+  essential: true
+  portMappings:
+  - hostPort: 1080
+    protocol: tcp
+    containerPort: 1080
+  logConfiguration:
+    logDriver: awslogs
+    secretOptions:
+    options:
+      awslogs-group: "/ecs/v2ray-vpn"
+      awslogs-region: ap-east-1
+      awslogs-stream-prefix: ecs
+- name: ddns
+  image: bywang/ddns:latest
+  essential: false
+  logConfiguration:
+    logDriver: awslogs
+    secretOptions:
+    options:
+      awslogs-group: "/ecs/v2ray-vpn"
+      awslogs-region: ap-east-1
+      awslogs-stream-prefix: ecs
+  environment:
+  - name: SUBDOMAIN
+    value: ${ddns_subdomain}
+  - name: TOKEN
+    value: ${ddns_token}
