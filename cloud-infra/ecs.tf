@@ -17,10 +17,18 @@ resource "aws_ecs_service" "vpn" {
   task_definition         = aws_ecs_task_definition.v2ray_vpn.arn
   desired_count           = 1
   enable_ecs_managed_tags = true
-  launch_type             = "FARGATE"
+
   network_configuration {
     assign_public_ip = true
     subnets          = module.vpc.public_subnets
+  }
+  capacity_provider_strategy {
+    base              = 0
+    capacity_provider = "FARGATE_SPOT"
+    weight            = 1
+  }
+  deployment_controller {
+    type = "ECS"
   }
 }
 
