@@ -6,7 +6,7 @@ update() {
 }
 
 echo "Updating DNS ${SUBDOMAIN}.freemyip.com"
-for i in $(seq 1 5); do
+for i in $(seq 1 3); do
     echo "----try ${i}----"
     update
 done;
