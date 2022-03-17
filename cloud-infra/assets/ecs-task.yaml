@@ -1,10 +1,13 @@
 - name: v2ray
-  image: bywang/vpn
+  image: bywang/vpn:7
   essential: true
   portMappings:
   - hostPort: 1080
     protocol: tcp
     containerPort: 1080
+  - hostPort: 1081
+    protocol: udp
+    containerPort: 1081
   logConfiguration:
     logDriver: awslogs
     secretOptions:
@@ -13,7 +16,7 @@
       awslogs-region: ap-east-1
       awslogs-stream-prefix: ecs
 - name: ddns
-  image: bywang/ddns:latest
+  image: bywang/ddns:8
   essential: false
   logConfiguration:
     logDriver: awslogs

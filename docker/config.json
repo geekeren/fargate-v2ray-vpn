@@ -1,8 +1,6 @@
 {
   "log": {
-    "loglevel": "error",
-    "access": "/var/log/v2ray/access.log",
-    "error": "/var/log/v2ray/error.log"
+    "loglevel": "warning"
   },
   "inbounds": [
     {
@@ -14,6 +12,10 @@
           {
             "id": "b831381d-6324-4d53-ad4f-8cda48b30811",
             "alterId": 0
+          },
+          {
+            "id": "81c59054-6662-7618-aec5-f57993ee63a3",
+            "alterId": 0
           }
         ]
       },
@@ -21,6 +23,30 @@
         "network": "ws",
         "wsSettings": {
         "path": "/ray"
+        }
+      }
+    },
+    {
+      "port": 1081,
+      "listen": "0.0.0.0",
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "81c59054-6662-7618-aec5-f57993ee63a3",
+            "alterId": 0
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "mkcp",
+        "kcpSettings": {
+          "uplinkCapacity": 100,
+          "downlinkCapacity": 100,
+          "congestion": true,
+          "header": {
+            "type": "wechat-video"
+          }
         }
       }
     }

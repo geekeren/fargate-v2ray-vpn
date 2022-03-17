@@ -15,6 +15,13 @@ module "vpc" {
       protocol    = "tcp"
       to_port     = 1080
     },
+    {
+      cidr_blocks = "0.0.0.0/0"
+      description = "allow v2ray"
+      from_port   = 1081
+      protocol    = "udp"
+      to_port     = 1081
+    },
   ]
   default_security_group_egress = [
     {
