@@ -10,11 +10,7 @@
       "settings": {
         "clients": [
           {
-            "id": "b831381d-6324-4d53-ad4f-8cda48b30811",
-            "alterId": 0
-          },
-          {
-            "id": "81c59054-6662-7618-aec5-f57993ee63a3",
+            "id": "2b0958b9-af34-e0a3-49ac-7ef4810ab873",
             "alterId": 0
           }
         ]
@@ -33,7 +29,7 @@
       "settings": {
         "clients": [
           {
-            "id": "81c59054-6662-7618-aec5-f57993ee63a3",
+            "id": "2b0958b9-af34-e0a3-49ac-7ef4810ab873",
             "alterId": 0
           }
         ]

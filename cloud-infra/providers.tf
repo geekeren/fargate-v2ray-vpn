@@ -12,3 +12,5 @@ provider "aws" {
   region = "ap-east-1"
   profile = var.aws_profile
 }
+
+provider "archive" {}

@@ -1,5 +1,5 @@
 - name: v2ray
-  image: bywang/vpn:7
+  image: bywang/vpn:8
   essential: true
   portMappings:
   - hostPort: 1080
@@ -16,7 +16,7 @@
       awslogs-region: ap-east-1
       awslogs-stream-prefix: ecs
 - name: ddns
-  image: bywang/ddns:8
+  image: bywang/ddns:9
   essential: false
   logConfiguration:
     logDriver: awslogs
