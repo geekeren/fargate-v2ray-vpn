@@ -2,3 +2,4 @@
 .DS_Store
 terraform.tfstate.d/
 *.tfstate*
+node_modules/

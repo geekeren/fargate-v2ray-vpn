@@ -12,9 +12,16 @@
     logDriver: awslogs
     secretOptions:
     options:
-      awslogs-group: "/ecs/v2ray-vpn"
-      awslogs-region: ap-east-1
+      awslogs-group: ${aws_log_group}
+      awslogs-region: ${aws_region}
       awslogs-stream-prefix: ecs
+- name: gpt-proxy
+  image: bywang/gpt-proxy:1
+  essential: true
+  portMappings:
+  - hostPort: 3000
+    protocol: tcp
+    containerPort: 3000
 - name: ddns
   image: bywang/ddns:9
   essential: false
@@ -22,8 +29,8 @@
     logDriver: awslogs
     secretOptions:
     options:
-      awslogs-group: "/ecs/v2ray-vpn"
-      awslogs-region: ap-east-1
+      awslogs-group: ${aws_log_group}
+      awslogs-region: ${aws_region}
       awslogs-stream-prefix: ecs
   environment:
   - name: SUBDOMAIN
