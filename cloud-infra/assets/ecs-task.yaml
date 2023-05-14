@@ -23,7 +23,7 @@
     protocol: tcp
     containerPort: 3000
 - name: ddns
-  image: bywang/ddns:9
+  image: bywang/ddns:10
   essential: false
   logConfiguration:
     logDriver: awslogs

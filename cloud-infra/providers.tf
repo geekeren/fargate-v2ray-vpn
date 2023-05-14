@@ -13,4 +13,10 @@ provider "aws" {
   profile = var.aws_profile
 }
 
+provider "aws" {
+  alias = "singpore"
+  region = "ap-southeast-1" # 新加坡
+  profile = var.aws_profile
+}
+
 provider "archive" {}
